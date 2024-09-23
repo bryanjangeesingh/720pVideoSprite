@@ -1,0 +1,130 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Mon Oct  2 01:57:54 2023
+| Host         : worker running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_timing -file obj/post_synth_timing.rpt
+| Design       : top_level
+| Device       : 7s50-csga324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -8.768ns  (required time - arrival time)
+  Source:                 mvg/hcount_out_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_pixel_clk_wiz_0  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Destination:            tmds_blue/disparity_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk_pixel_clk_wiz_0  {rise@0.000ns fall@6.734ns period=13.468ns})
+  Path Group:             clk_pixel_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            13.468ns  (clk_pixel_clk_wiz_0 rise@13.468ns - clk_pixel_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        21.951ns  (logic 11.126ns (50.685%)  route 10.825ns (49.315%))
+  Logic Levels:           22  (CARRY4=7 DSP48E1=2 LUT2=3 LUT3=2 LUT4=1 LUT5=2 LUT6=5)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -2.063ns = ( 11.405 - 13.468 ) 
+    Source Clock Delay      (SCD):    -1.388ns
+    Clock Pessimism Removal (CPR):    0.530ns
+  Clock Uncertainty:      0.168ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.329ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_pixel_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    N15                                               0.000     0.000 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000     0.000    mhdmicw/clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.440     1.440 r  mhdmicw/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.584     2.024    mhdmicw/clk_ref_clk_wiz_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -5.108    -3.083 r  mhdmicw/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.800    -2.284    mhdmicw/clk_pixel_clk_wiz_0
+                         BUFG (Prop_bufg_I_O)         0.096    -2.188 r  mhdmicw/clkout1_buf/O
+                         net (fo=139, unplaced)       0.800    -1.388    mvg/clk_pixel
+                         FDRE                                         r  mvg/hcount_out_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_fdre_C_Q)         0.456    -0.932 r  mvg/hcount_out_reg[1]/Q
+                         net (fo=11, unplaced)        0.516    -0.416    mvg/hcount_out_reg[10]_0[1]
+                         LUT2 (Prop_lut2_I0_O)        0.295    -0.121 r  mvg/i__carry_i_3__2/O
+                         net (fo=1, unplaced)         0.000    -0.121    msp/cs/red_out2__4_1[1]
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     0.429 r  msp/cs/red_out3_inferred__0/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.009     0.438    msp/cs/red_out3_inferred__0/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     0.552 r  msp/cs/red_out3_inferred__0/i__carry__0/CO[3]
+                         net (fo=1, unplaced)         0.000     0.552    msp/cs/red_out3_inferred__0/i__carry__0_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     0.900 r  msp/cs/red_out3_inferred__0/i__carry__1/O[1]
+                         net (fo=4, unplaced)         0.800     1.700    msp/cs/red_out3[9]
+                         DSP48E1 (Prop_dsp48e1_A[9]_PCOUT[47])
+                                                      4.215     5.915 r  msp/cs/red_out2__3/PCOUT[47]
+                         net (fo=1, unplaced)         0.055     5.970    msp/cs/red_out2__3_n_106
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_P[0])
+                                                      1.518     7.488 r  msp/cs/red_out2__4/P[0]
+                         net (fo=2, unplaced)         0.800     8.287    msp/cs/red_out2__4_n_105
+                         LUT2 (Prop_lut2_I0_O)        0.124     8.411 r  msp/cs/i__carry_i_3__0/O
+                         net (fo=1, unplaced)         0.000     8.411    msp/cs/i__carry_i_3__0_n_0
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     8.961 r  msp/cs/red_out2_inferred__0/i__carry/CO[3]
+                         net (fo=1, unplaced)         0.009     8.970    msp/cs/red_out2_inferred__0/i__carry_n_0
+                         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.348     9.318 r  msp/cs/red_out2_inferred__0/i__carry__0/O[1]
+                         net (fo=2, unplaced)         0.622     9.940    msp/cs/red_out2_inferred__0/i__carry__0_n_6
+                         LUT2 (Prop_lut2_I0_O)        0.306    10.246 r  msp/cs/red_out1_carry__4_i_3/O
+                         net (fo=1, unplaced)         0.000    10.246    msp/cs/red_out1_carry__4_i_3_n_0
+                         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    10.796 r  msp/cs/red_out1_carry__4/CO[3]
+                         net (fo=1, unplaced)         0.000    10.796    msp/cs/red_out1_carry__4_n_0
+                         CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.329    11.125 f  msp/cs/red_out1_carry__5/O[3]
+                         net (fo=2, unplaced)         0.629    11.754    msp/cs/dist_sqd[27]
+                         LUT4 (Prop_lut4_I3_O)        0.307    12.061 f  msp/cs/disparity[1]_i_11/O
+                         net (fo=2, unplaced)         1.122    13.183    msp/cs/disparity[1]_i_11_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.124    13.307 r  msp/cs/tmds_out[7]_i_4/O
+                         net (fo=26, unplaced)        0.515    13.822    msp/cs/tmds_out[7]_i_5
+                         LUT3 (Prop_lut3_I0_O)        0.124    13.946 r  msp/cs/tmds_out[6]_i_5/O
+                         net (fo=5, unplaced)         0.930    14.876    msp/cs/tmds_out[6]_i_5_n_0
+                         LUT6 (Prop_lut6_I3_O)        0.124    15.000 r  msp/cs/tmds_out[8]_i_5/O
+                         net (fo=1, unplaced)         0.419    15.419    mtpg/tmds_out_reg[1]_0
+                         LUT6 (Prop_lut6_I3_O)        0.124    15.543 r  mtpg/tmds_out[8]_i_2/O
+                         net (fo=33, unplaced)        0.974    16.517    msp/cs/disparity[4]_i_11__0_0
+                         LUT5 (Prop_lut5_I1_O)        0.124    16.641 r  msp/cs/disparity[4]_i_22__1/O
+                         net (fo=2, unplaced)         0.913    17.554    msp/cs/disparity[4]_i_22__1_n_0
+                         LUT3 (Prop_lut3_I0_O)        0.124    17.678 r  msp/cs/disparity[4]_i_11__0/O
+                         net (fo=14, unplaced)        0.953    18.631    tmds_blue/disparity[4]_i_6__0_0
+                         LUT6 (Prop_lut6_I2_O)        0.124    18.755 r  tmds_blue/disparity[3]_i_6__0/O
+                         net (fo=1, unplaced)         1.111    19.866    mtpg/disparity_reg[3]_1
+                         LUT6 (Prop_lut6_I1_O)        0.124    19.990 r  mtpg/disparity[3]_i_5__0/O
+                         net (fo=1, unplaced)         0.449    20.439    mtpg/disparity[3]_i_5__0_n_0
+                         LUT5 (Prop_lut5_I4_O)        0.124    20.563 r  mtpg/disparity[3]_i_1__0/O
+                         net (fo=1, unplaced)         0.000    20.563    tmds_blue/D[2]
+                         FDRE                                         r  tmds_blue/disparity_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_pixel_clk_wiz_0 rise edge)
+                                                     13.468    13.468 r  
+    N15                                               0.000    13.468 r  clk_100mhz (IN)
+                         net (fo=0)                   0.000    13.468    mhdmicw/clk_100mhz
+    N15                  IBUF (Prop_ibuf_I_O)         1.370    14.838 r  mhdmicw/clkin1_ibufg/O
+                         net (fo=1, unplaced)         0.439    15.277    mhdmicw/clk_ref_clk_wiz_0
+                         MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -5.378     9.899 r  mhdmicw/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, unplaced)         0.760    10.659    mhdmicw/clk_pixel_clk_wiz_0
+                         BUFG (Prop_bufg_I_O)         0.091    10.750 r  mhdmicw/clkout1_buf/O
+                         net (fo=139, unplaced)       0.655    11.405    tmds_blue/clk_pixel
+                         FDRE                                         r  tmds_blue/disparity_reg[3]/C
+                         clock pessimism              0.530    11.935    
+                         clock uncertainty           -0.168    11.767    
+                         FDRE (Setup_fdre_C_D)        0.029    11.796    tmds_blue/disparity_reg[3]
+  -------------------------------------------------------------------
+                         required time                         11.796    
+                         arrival time                         -20.563    
+  -------------------------------------------------------------------
+                         slack                                 -8.768    
+
+
+
+

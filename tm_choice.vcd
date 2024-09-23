@@ -1,0 +1,73 @@
+$date
+	Sat Sep 30 22:09:19 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tm_choice_tb $end
+$var wire 9 ! qm_out [8:0] $end
+$var reg 8 " data_in [7:0] $end
+$scope module uut $end
+$var wire 8 # data_in [7:0] $end
+$var reg 9 $ qm_out [8:0] $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 % i [31:0] $end
+$upscope $end
+$scope begin $ivl_for_loop1 $end
+$var integer 32 & i [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1000 &
+bx %
+b100000000 $
+b0 #
+b0 "
+b100000000 !
+$end
+#10000
+b111111111 !
+b111111111 $
+b1000 &
+b1 "
+b1 #
+#20000
+b111111110 !
+b111111110 $
+b1000 &
+b10 "
+b10 #
+#30000
+b100000001 !
+b100000001 $
+b1000 &
+b11 "
+b11 #
+#40000
+b111111100 !
+b111111100 $
+b1000 &
+b100 "
+b100 #
+#50000
+b100000011 !
+b100000011 $
+b1000 &
+b101 "
+b101 #
+#60000
+b100000010 !
+b100000010 $
+b1000 &
+b110 "
+b110 #
+#70000
